@@ -55,3 +55,29 @@ cat_list[0].name = "Princess IsaKiKo";
 for(var cat in cat_list){
 	console.log(cat_list[cat]);
 };
+
+function turnCatToDog(cat){
+	return { 
+		name: "Mr. " + cat.name,
+		weight: cat.weight*2
+	};
+};
+
+var dog_list = cat_list.map(turnCatToDog);
+
+for(var dog in dog_list){
+	console.log(dog_list[dog]);
+};
+
+console.log("ଲ( ⓛ ω ⓛ *)ଲ");
+
+var cat_json = JSON.stringify(cat_list);
+
+console.log(cat_json);
+
+var cat_list_from_json = JSON.parse(cat_json);
+
+for(var cat in cat_list_from_json){
+	console.log(cat_list_from_json[cat]);
+};
+
