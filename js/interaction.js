@@ -44,17 +44,19 @@ cat_list.push({
 
 console.log(cat_list);
 
-for (var i = cat_list.length - 1; i >= 0; i--) {
-console.log(cat_list[i]);
+function printListWithObject(pList){
+	for(var tObj in pList){
+		console.log(pList[tObj]);
+	};
 };
+
+printListWithObject(cat_list);
 
 console.log("ଲ( ⓛ ω ⓛ *)ଲ");
 
 cat_list[0].name = "Princess IsaKiKo";
 
-for(var cat in cat_list){
-	console.log(cat_list[cat]);
-};
+printListWithObject(cat_list);
 
 function turnCatToDog(cat){
 	return { 
@@ -65,9 +67,7 @@ function turnCatToDog(cat){
 
 var dog_list = cat_list.map(turnCatToDog);
 
-for(var dog in dog_list){
-	console.log(dog_list[dog]);
-};
+printListWithObject(dog_list);
 
 console.log("ଲ( ⓛ ω ⓛ *)ଲ");
 
@@ -77,7 +77,6 @@ console.log(cat_json);
 
 var cat_list_from_json = JSON.parse(cat_json);
 
-for(var cat in cat_list_from_json){
-	console.log(cat_list_from_json[cat]);
-};
+printListWithObject(cat_list_from_json);
+
 
